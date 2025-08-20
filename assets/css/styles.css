@@ -1,0 +1,410 @@
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f0f2f5;
+}
+.sidebar {
+  width: 250px;
+ background-color: white;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+ebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed ul li a span {
+  display: none;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  color: #333;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sidebar ul li a i {
+  margin-right: 15px;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+  color: black; /* keep your icon blue */
+}
+
+/* Hover Effects */
+.sidebar ul li a:hover {
+background-color: #f6f9ff;
+  color: #003287;
+  border-left: 4px solid #003287;
+
+  margin-left: 25px;
+}
+
+.sidebar ul li a {
+  transition: all 0.5s ease; /* Adjust duration as needed */
+}
+
+
+/* Submenu */
+.submenu {
+  display: none;
+background-color: #f6f9ff;
+padding-left: 15px;
+
+transition: all 0.5s ease;
+}
+
+.submenu.open {
+  display: block;
+}
+
+/* Arrow for submenu toggle */
+.has-submenu .arrow {
+  margin-left: auto;
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/* Sidebar Toggle Button */
+/* Toggle Button Bars */
+.toggle-btn {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.bars {
+  height: 4px;
+  background-color: #003287;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.custom-table th{
+  background-color: #003287 !important;
+  text-transform: uppercase !important;
+}
+
+.custom-table tbody td{
+  font-size: 18px !important;
+}
+
+
+/* Bar animations */
+#checkbox:checked + .toggle-btn #bar1 {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+#checkbox:checked + .toggle-btn #bar2 {
+  opacity: 0;
+}
+
+#checkbox:checked + .toggle-btn #bar3 {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Sidebar toggle using JS class, you still use .collapsed or .active in JS */
+.sidebar {
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    left: -250px;
+  }
+  .sidebar.active {
+    left: 0;
+  }
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  .fw-bold {
+    margin-left: 2rem;
+  }
+}
+
+
+
+
+.main-content {
+  margin-left: 250px;
+  padding: 10px;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh; /* Ensures full screen height */
+}
+
+.main-content.expanded {
+  margin-left: 60px;
+}
+
+
+
+
+.sidebar-logo {
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 50%;     /* Set desired width */
+  height: 110px;    /* Set desired height */
+  display: block;
+  margin-left: 5rem;
+  margin-top: -2rem;
+
+   /* Center it if needed */
+}
+
+
+.custom-box {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Fancy Form Controls */
+.form-control,
+.form-select {
+  border-radius: 12px;
+  padding: 8px 10px;
+  border: 2px solid rgba(200, 200, 200, 0.4);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* Placeholder styling */
+.form-control::placeholder {
+  color: #999;
+  font-style:normal;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #000 !important;
+  opacity: 1;
+}
+
+input::-webkit-input-placeholder {
+  color: #000 !important;
+}
+input::-moz-placeholder {
+  color: #000 !important;
+}
+input:-ms-input-placeholder {
+  color: #000 !important;
+}
+input::-ms-input-placeholder {
+  color: #000 !important;
+}
+
+/* On Hover */
+.form-control:hover,
+.form-select:hover {
+  border-color: #003287; /* gold accent */
+  box-shadow: 0 4px 12px rgba(193, 154, 107, 0.2);
+}
+
+
+
+.add-btn-custom{
+  /* From Uiverse.io by adamgiebl */ 
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 10px;
+  border: 3px solid #003287;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #003287;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.add-btn-custom:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color:rgb(52, 198, 52);
+  z-index: -1;
+}
+
+.add-btn-custom:hover, .add-btn-custom:focus {
+  color: white;
+}
+
+.add-btn-custom:hover:before, .add-btn-custom:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.add-btn-custom:active {
+  transform: scale(0.9);
+}
+
+
+
+
+/* Elegant Form Labels */
+.form-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #3a3a3a;
+  margin-bottom: 6px;
+  display: block;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-left: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Stat Cards */
+  .stat-card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      background: white;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.6s forwards;
+    }
+
+    .stat-card .icon {
+      font-size: 2rem;
+      color: #003287;
+      margin-bottom: 10px;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Delay for each card */
+    .col-md-3:nth-child(1) .stat-card { animation-delay: 0.1s; }
+    .col-md-3:nth-child(2) .stat-card { animation-delay: 0.2s; }
+    .col-md-3:nth-child(3) .stat-card { animation-delay: 0.3s; }
+    .col-md-3:nth-child(4) .stat-card { animation-delay: 0.4s; }
+
+    /* Recently Added */
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .card-header {
+      background:#003287 ;
+      color: white;
+      font-weight: 600;
+    }
+
+    table thead {
+      background-color: #f1f3f5;
+    }
+
+    table tbody tr:hover {
+      background: #f8f9fa;
+      transition: 0.2s;
+    }
+
+    /* Animated counters */
+    .stat-card h3 {
+      font-weight: bold;
+      color: #333;
+    }
+
+#expenseChart {
+  max-height: 200px;  /* smaller chart */
+  width: 100% !important;
+}
+
+
+.custom-underline-heading {
+  text-align: center;
+  display: inline-block;
+  border-bottom: 2px solid green;
+  padding-bottom: 5px;
+  margin: 0 auto;
+}
+
+
+  @media print {
+      .no-print {
+        display: none;
+      }
+    }
+
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dish-category-list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+    <!-- Sidebar Toggle Button -->
+    <!-- Sidebar Toggle Button -->
+    <input type="checkbox" id="checkbox" hidden>
+    <label for="checkbox" class="toggle-btn" id="toggleBtn">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+    </label>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <!-- Optional Logo -->
+        </div>
+        <ul>
+            <!-- Dashboard -->
+            <li>
+                <a href="../index.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+            </li>
+
+            <!-- Recipe Calc -->
+            <li>
+                <a href="../recipe-call/recipe-list.html"><i class="fas fa-utensils"></i><span>Recipe Calc</span></a>
+            </li>
+
+            <!-- Food Menu -->
+            <li>
+                <a href="../food-menu/food-menu-list.html"><i class="fas fa-book-open"></i><span>Food Menu</span></a>
+            </li>
+
+            <!-- Reports -->
+            <li>
+                <a href="reports.html"><i class="fas fa-chart-line"></i><span>Reports</span></a>
+            </li>
+
+            <!-- Settings / Masters -->
+            <li class="has-submenu">
+                <a href="#" class="submenu-toggle">
+                    <i class="fas fa-cogs"></i><span>Settings</span>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="dish-category-list.html"><i class="fas fa-layer-group"></i><span> Dish
+                                Category</span></a>
+                    </li>
+                    <li>
+                        <a href="../Ingredients/Ingredients-list.html"><i class="fas fa-carrot"></i><span>
+                                Ingredients</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/recipe.html"><i class="fas fa-clipboard-list"></i><span> Recipe</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/uom.html"><i class="fas fa-balance-scale"></i><span> UOM</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/secondary-uom.html"><i class="fas fa-ruler-combined"></i><span> Secondary
+                                UOM</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Header -->
+        <!-- Header -->
+        <div id="mainHeader"
+            class="d-flex justify-content-between align-items-center px-4 py-2 bg-white text-dark shadow-sm w-100">
+            <h4 class="fw-bold mb-0">Dish Category List</h4>
+            <div class="d-flex align-items-center gap-3">
+                <!-- Profile Icon with Dropdown -->
+                <div class="dropdown">
+                    <a href="#"
+                        class="d-flex align-items-center justify-content-center bg-head text-white rounded-circle"
+                        id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="width: 23px; height: 20px;">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#userProfileModal">Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="container-fluid py-5">
+            <div class="custom-box p-4">
+                <div class="d-flex justify-content-end align-items-center mb-3">
+                    <a href="./add-dish-category.html" class="add-btn-custom">+ New Category</a>
+                </div>
+
+                <!-- Table -->
+                <table class="table table-bordered table-striped custom-table fs-4">
+                    <thead class="table-dark text-center">
+                        <tr>
+                            <th>S.No</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr>
+                            <td>1</td>
+                            <td>Snacks</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-info">View</a>
+                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Beverages</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-info">View</a>
+                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Breakfast</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-info">View</a>
+                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Lunch</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-info">View</a>
+                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Desserts</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-info">View</a>
+                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

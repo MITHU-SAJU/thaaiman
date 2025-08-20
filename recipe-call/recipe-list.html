@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- jsPDF & html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+    <!-- Sidebar Toggle Button -->
+    <!-- Sidebar Toggle Button -->
+    <input type="checkbox" id="checkbox" hidden>
+    <label for="checkbox" class="toggle-btn" id="toggleBtn">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+    </label>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <!-- Optional Logo -->
+        </div>
+        <ul>
+            <!-- Dashboard -->
+            <li>
+                <a href="../index.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+            </li>
+
+            <!-- Recipe Calc -->
+            <li>
+                <a href="./recipe-list.html"><i class="fas fa-utensils"></i><span>Recipe Calc</span></a>
+            </li>
+
+            <!-- Food Menu -->
+            <li>
+                <a href="../food-menu/food-menu-list.html"><i class="fas fa-book-open"></i><span>Food Menu</span></a>
+            </li>
+
+            <!-- Reports -->
+            <li>
+                <a href="reports.html"><i class="fas fa-chart-line"></i><span>Reports</span></a>
+            </li>
+
+            <!-- Settings / Masters -->
+            <li class="has-submenu">
+                <a href="#" class="submenu-toggle">
+                    <i class="fas fa-cogs"></i><span>Settings</span>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="../dish-category/dish-category-list.html"><i class="fas fa-layer-group"></i><span> Dish
+                                Category</span></a>
+                    </li>
+                    <li>
+                        <a href="../Ingredients/Ingredients-list.html"><i class="fas fa-carrot"></i><span>
+                                Ingredients</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/recipe.html"><i class="fas fa-clipboard-list"></i><span> Recipe</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/uom.html"><i class="fas fa-balance-scale"></i><span> UOM</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/secondary-uom.html"><i class="fas fa-ruler-combined"></i><span> Secondary
+                                UOM</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Header -->
+        <!-- Header -->
+        <div id="mainHeader"
+            class="d-flex justify-content-between align-items-center px-4 py-2 bg-white text-dark shadow-sm w-100">
+            <h4 class="fw-bold mb-0">Recipe Calc</h4>
+            <div class="d-flex align-items-center gap-3">
+                <!-- Profile Icon with Dropdown -->
+                <div class="dropdown">
+                    <a href="#"
+                        class="d-flex align-items-center justify-content-center bg-head text-white rounded-circle"
+                        id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="width: 23px; height: 20px;">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#userProfileModal">Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="container-fluid py-5">
+            <div class="custom-box p-4">
+                <!-- Input Form -->
+                <div class="container d-flex justify-content-center mt-5">
+                    <div class="p-4 rounded shadow-sm border bg-light" style="min-width: 800px;">
+                        <form class="row g-3">
+                            <div class="row align-items-end g-3">
+                                <div class="col-md-3">
+                                    <label class="form-label">Meal Type</label>
+                                    <select class="form-select">
+                                        <option value="">-- Select --</option>
+                                        <option value="breakfast">Breakfast</option>
+                                        <option value="lunch">Lunch</option>
+                                        <option value="dinner">Dinner</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Item</label>
+                                    <select class="form-select">
+                                        <option value="">-- Select Item --</option>
+                                        <option value="pongal">Pongal</option>
+                                        <option value="idli">Idli</option>
+                                        <option value="dosa">Dosa</option>
+                                        <option value="poori">Poori</option>
+                                        <option value="vada">Vada</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Quantity</label>
+                                    <input type="number" class="form-control" placeholder="e.g., 4">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Bucket</label>
+                                    <input type="number" class="form-control" placeholder=" Bucket">
+                                </div>
+                            </div>
+
+                            <!-- Centered Button Row -->
+                            <div class="row mt-3">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button type="button" class=" add-btn-custom">Calculate</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+
+                <!-- Ingredients Table -->
+                <div class="mt-4">
+                    <div class="text-center my-5">
+                        <h5 class="custom-underline-heading">Ingredients Required</h5>
+                    </div>
+
+
+                    <table class="table table-bordered table-striped custom-table fs-4">
+                        <thead class="table-dark text-center">
+                            <tr>
+                                <th>Item Name</th>
+                                <th>UOM</th>
+                                <th>Required Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td>Dal</td>
+                                <td>Kg</td>
+                                <td>2.0</td>
+                            </tr>
+                            <tr>
+                                <td>Sugar</td>
+                                <td>Kg</td>
+                                <td>0.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Save Button -->
+                <div class="text-end mt-3">
+                    <a href="./recipe-list.html" class="btn btn-lg btn-success">Add to List</a>
+                </div>
+            </div>
+
+
+            <div class="container-fluid py-5">
+                <div class="custom-box p-4">
+                    <!-- <div class="d-flex justify-content-end align-items-center mb-3">
+                        <a href="./add-recipe.html" class="add-btn-custom"><i class="bi bi-plus-lg"></i> New Recipe
+                            Call</a>
+                    </div> -->
+
+                    <!-- Table -->
+                    <table id="myTable" class="table table-bordered table-striped custom-table fs-4">
+                        <thead class="table-dark text-center">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Item Name</th>
+                                <th>Qty</th>
+                                <th>UOM</th>
+                                <th>Bucket</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td>1</td>
+                                <td>Pongal</td>
+                                <td>4</td>
+                                <td>Buckets</td>
+                                <td>20</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-info">View</a>
+                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Sambar</td>
+                                <td>1</td>
+                                <td>Bucket</td>
+                                <td>30</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-info">View</a>
+                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- PDF Button -->
+                    <div class="text-end mt-3">
+                        <button class="btn btn-success btn-lg" onclick="downloadPDF()">Download PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../assets/js/script.js"></script>
+        <script>
+            async function downloadPDF() {
+                const {
+                    jsPDF
+                } = window.jspdf;
+                const table = document.getElementById("myTable");
+
+                // 🔹 Clone table so we don't modify the original
+                const clonedTable = table.cloneNode(true);
+
+                // 🔹 Remove the last column (Action) from cloned table
+                clonedTable.querySelectorAll("tr").forEach(row => {
+                    row.deleteCell(row.cells.length - 1);
+                });
+
+                // 🔹 Put cloned table into a hidden container for capture
+                const hiddenDiv = document.createElement("div");
+                hiddenDiv.style.position = "absolute";
+                hiddenDiv.style.left = "-9999px"; // keep off-screen
+                hiddenDiv.appendChild(clonedTable);
+                document.body.appendChild(hiddenDiv);
+
+                // Capture with html2canvas
+                const canvas = await html2canvas(clonedTable, {
+                    scale: 2
+                });
+                const imgData = canvas.toDataURL("image/png");
+
+                // Create PDF
+                const pdf = new jsPDF("p", "mm", "a4");
+                const pageWidth = pdf.internal.pageSize.getWidth();
+
+                // Resize image to fit page width
+                const imgWidth = pageWidth - 20;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+
+                // Save as PDF
+                pdf.save("table.pdf");
+
+                // Clean up
+                document.body.removeChild(hiddenDiv);
+            }
+        </script>
+
+
+</body>
+
+</html>
