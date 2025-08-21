@@ -119,128 +119,138 @@
 
         <div class="container-fluid py-5">
             <div class="custom-box p-4">
-                <!-- Input Form -->
-                <div class="container mt-4">
+
+                <div class="container-fluid mt-4">
                     <div class="p-4 rounded shadow-sm border bg-light">
-                        <form class="row g-3 align-items-end">
+                        <!-- Meal Type -->
+                        <div class="col-md-3 col-sm-6">
+                            <label class="form-label">Meal Type</label>
+                            <select class="form-select">
+                                <option value="">-- Select --</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Input Form -->
+                <div class="container-fluid mt-4">
+                    <div class="p-4 rounded shadow-sm border bg-light">
+                        <form class="row g-3 align-items-start">
 
-                            <!-- Meal Type -->
-                            <div class="col-md-3 col-sm-6">
-                                <label class="form-label">Meal Type</label>
-                                <select class="form-select">
-                                    <option value="">-- Select --</option>
-                                    <option value="breakfast">Breakfast</option>
-                                    <option value="lunch">Lunch</option>
-                                    <option value="dinner">Dinner</option>
-                                </select>
-                            </div>
-
-                            <!-- Item (Custom Dropdown with Images) -->
-                            <div class="col-md-3 col-sm-6">
+                            <!-- Item -->
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <label class="form-label">Item</label>
                                 <div class="custom-dropdown w-100" id="itemDropdown">
                                     <div class="dropdown-selected">
                                         <span>-- Select Item --</span>
                                     </div>
                                     <div class="dropdown-options">
-                                        <div class="dropdown-option" data-value="pongal">
+                                        <div class="dropdown-option" data-value="pongal"
+                                            data-img="../assets/images/pongal.jpeg">
                                             <img src="../assets/images/pongal.jpeg" alt="Pongal"> Pongal
                                         </div>
-                                        <div class="dropdown-option" data-value="idli">
+                                        <div class="dropdown-option" data-value="idli"
+                                            data-img="../assets/images/idly.jpeg">
                                             <img src="../assets/images/idly.jpeg" alt="Idli"> Idli
                                         </div>
-                                        <div class="dropdown-option" data-value="dosa">
+                                        <div class="dropdown-option" data-value="dosa"
+                                            data-img="../assets/images/dosa.jpeg">
                                             <img src="../assets/images/dosa.jpeg" alt="Dosa"> Dosa
                                         </div>
-                                        <div class="dropdown-option" data-value="poori">
+                                        <div class="dropdown-option" data-value="poori"
+                                            data-img="../assets/images/poori.jpeg">
                                             <img src="../assets/images/poori.jpeg" alt="Poori"> Poori
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- Preview -->
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <label class="form-label">Selected Item</label>
+                                <div id="itemPreview" class="preview-box">
+                                    <!-- preview inserted dynamically -->
+                                </div>
+                            </div>
+
                             <!-- Quantity -->
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <label class="form-label">Quantity</label>
-                                <input type="number" class="form-control" placeholder="4">
+                                <input type="number" class="form-control" placeholder="4 buckets">
                             </div>
 
-                            <div class="col-md-3 col-sm-6">
-                                <!-- <label class="form-label">Bucket</label> -->
-                                <input type="number" class="form-control" placeholder="Bucket" readonly>
-                            </div>
-
-                            <!-- Button (full row, centered) -->
-                            <div class="col-12 d-flex justify-content-center mt-3">
+                            <!-- Button -->
+                            <div class="col-12 d-flex justify-content-center mt-4">
                                 <button type="button" class="add-btn-custom px-4">Calculate</button>
                             </div>
-
                         </form>
-                    </div>
-                </div>
 
-
-                <!-- Ingredients Table -->
-                <div class="mt-4">
-                    <div class="text-center my-4">
-                        <h5 class="custom-underline-heading">Pongal Ingredients Required</h5>
                     </div>
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped custom-table fs-4 text-center">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Ingredients Name</th>
-                                    <th>UOM</th>
-                                    <th>Required Qty</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Raw Rice</td>
-                                    <td>Kg</td>
-                                    <td>1.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Moong Dal </td>
-                                    <td>Kg</td>
-                                    <td>0.5</td>
-                                </tr>
-                                <tr>
-                                    <td>Ghee </td>
-                                    <td>Kg</td>
-                                    <td>0.2</td>
-                                </tr>
-                                <tr>
-                                    <td>Black Pepper </td>
-                                    <td>Gram</td>
-                                    <td>20</td>
-                                </tr>
-                                <tr>
-                                    <td>Cumin Seeds</td>
-                                    <td>Gram</td>
-                                    <td>15</td>
-                                </tr>
+                    <!-- Ingredients Table -->
+                    <div class="mt-4">
+                        <div class="text-center my-4">
+                            <h5 class="custom-underline-heading"><span style="color: blue;">Pongal</span> Ingredients
+                                Required</h5>
+                        </div>
 
-                                <tr>
-                                    <td>Curry Leaves</td>
-                                    <td>Sprig</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Salt </td>
-                                    <td>Gram</td>
-                                    <td>20</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped custom-table fs-4 text-center">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Ingredients Name</th>
+                                        <th>UOM</th>
+                                        <th>Required Qty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Raw Rice</td>
+                                        <td>Kg</td>
+                                        <td>1.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Moong Dal </td>
+                                        <td>Kg</td>
+                                        <td>0.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ghee </td>
+                                        <td>Kg</td>
+                                        <td>0.2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Black Pepper </td>
+                                        <td>Gram</td>
+                                        <td>20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cumin Seeds</td>
+                                        <td>Gram</td>
+                                        <td>15</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Curry Leaves</td>
+                                        <td>Sprig</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Salt </td>
+                                        <td>Gram</td>
+                                        <td>20</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Save Button -->
-                <div class="text-end mt-3">
-                    <a href="./recipe-list.html" class="btn btn-lg btn-success">Add to List</a>
+                    <!-- Save Button -->
+                    <div class="text-center mt-3">
+                        <a href="./recipe-list.html" class="btn btn-lg btn-success">Add to List</a>
+                    </div>
                 </div>
             </div>
 
@@ -308,7 +318,7 @@
 
                     <!-- PDF Button -->
                     <div class="text-center mt-3">
-                        <button class="btn btn-success btn-lg" onclick="downloadPDF()">Download </button>
+                        <button class="btn btn-success btn-lg">View </button>
                     </div>
                 </div>
             </div>
@@ -321,36 +331,70 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Bootstrap Select JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js">
+    </script>
 
     <script>
         const dropdown = document.getElementById("itemDropdown");
         const selected = dropdown.querySelector(".dropdown-selected");
+        const optionsContainer = dropdown.querySelector(".dropdown-options");
         const options = dropdown.querySelectorAll(".dropdown-option");
+        const itemPreview = document.getElementById("itemPreview");
+
+        // Hide options initially
+        optionsContainer.style.display = "none";
 
         // Toggle dropdown
-        selected.addEventListener("click", () => {
-            dropdown.classList.toggle("open");
+        selected.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (optionsContainer.style.display === "none") {
+                optionsContainer.style.display = "grid";
+                optionsContainer.style.gridTemplateColumns = "1fr 1fr";
+                options.forEach(opt => {
+                    opt.style.display = "flex";
+                });
+            } else {
+                optionsContainer.style.display = "none";
+                options.forEach(opt => {
+                    opt.style.display = "none";
+                });
+            }
         });
 
         // Select option
         options.forEach(option => {
-            option.addEventListener("click", () => {
+            option.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const imgSrc = option.getAttribute("data-img") || option.querySelector("img").src;
+                const name = option.textContent.trim();
                 selected.innerHTML =
-                    `<img src="${option.querySelector("img").src}" alt=""> ${option.textContent}`;
-                dropdown.classList.remove("open");
+                    `<img src="${imgSrc}" alt="" style="width:28px; height:28px; border-radius:50%; "> <span>${name}</span>`;
+                optionsContainer.style.display = "none";
+                options.forEach(opt => {
+                    opt.style.display = "none";
+                });
+                // Show big preview inline
+                itemPreview.innerHTML = `
+  <img src="${imgSrc}" alt="${name}" class="preview-img">
+  <span class="preview-text">${name}</span>
+`;
+                itemPreview.style.display = "flex";
+
             });
         });
 
         // Close dropdown if clicked outside
         document.addEventListener("click", (e) => {
             if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove("open");
+                optionsContainer.style.display = "none";
+                options.forEach(opt => {
+                    opt.style.display = "none";
+                });
             }
         });
     </script>
 
-    <script>
+    <!-- <script>
         async function downloadPDF() {
             const {
                 jsPDF
@@ -392,7 +436,7 @@
             // Cleanup
             document.body.removeChild(hiddenDiv);
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

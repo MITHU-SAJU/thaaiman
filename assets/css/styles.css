@@ -132,7 +132,11 @@ transition: all 0.5s ease;
 
 .custom-table th{
   background-color: #003287 !important;
-  text-transform: uppercase !important;
+   text-transform: lowercase;
+}
+
+.custom-table th::first-letter{
+   text-transform: uppercase; 
 }
 
 .custom-table tbody td{
@@ -386,78 +390,118 @@ label {
       }
     }
 
-/* Dropdown container */
-.custom-dropdown {
-  position: relative;
-  width: 100%; /* make it responsive inside col */
-  font-family: Arial, sans-serif;
-}
+   .custom-dropdown {
+      position: relative;
+      width: 250px;
+      font-family: Arial, sans-serif;
+    }
 
-/* Selected item */
-.dropdown-selected {
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  padding: 8px 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 48px;   /* ✅ fixed height */
-  line-height: 1.2;   /* keep text aligned */
-  box-sizing: border-box;
+    /* Selected Field */
+    .dropdown-selected {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      padding: 10px 12px;
+      cursor: pointer;
       font-size: 16px;
-}
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+    }
 
-.dropdown-selected span {
-  flex: 1;
-  margin-left: 8px;   /* spacing after image */
-}
+    .dropdown-selected img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      margin-right: 8px;
+      object-fit: cover;
+    }
 
-/* Image inside selected */
-.dropdown-selected img {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  flex-shrink: 0;      /* prevent resizing */
-  margin-right: 8px;
-}
+    /* Options list */
+    .dropdown-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      display: none;   /* hidden by default */
+      z-index: 1000;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-/* Options list */
-.dropdown-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: #fff;
+    .dropdown-option {
+      display: flex;
+      flex-direction: column;  /* image top, text bottom */
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .dropdown-option img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
+    .dropdown-option span {
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .dropdown-option:hover {
+      background: #eaf6ff;
+      transform: translateY(-2px);
+      border-color: #4a90e2;
+    }
+
+    /* Only show when open */
+    .custom-dropdown.open .dropdown-options {
+      display: flex;
+    }
+
+
+/* Preview Box */
+.preview-box {       /* fixed width */
+  height: 220px;         /* fixed height */
   border: 1px solid #ccc;
-  border-radius: 8px;
-  max-height: 200px;
-  overflow-y: auto;
-  display: none;
-  z-index: 1000;
-}
-
-.dropdown-option {
-  padding: 8px 12px;
+  border-radius: 12px;
+  background: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  transition: background 0.2s;
+  justify-content: flex-start;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.dropdown-option img {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  margin-right: 8px;
+/* Image fills top area */
+.preview-img {
+  width: 100%;
+  height: 160px;          /* fixed height for consistency */
+  object-fit: contain;    /* full image shown without cutting */
+  border-radius: 8px;
+  background: #f9f9f9;    /* add bg for transparent imgs */
 }
 
-.dropdown-option:hover {
-  background: #f0f0f0;
-}
-
-/* Show dropdown */
-.custom-dropdown.open .dropdown-options {
-  display: block;
+/* Text always at bottom */
+.preview-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #003287;
+  margin-top: 8px;
 }
