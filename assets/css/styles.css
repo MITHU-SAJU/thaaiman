@@ -505,3 +505,66 @@ label {
   color: #003287;
   margin-top: 8px;
 }
+
+
+
+
+.view-container {
+  max-width: 1200px;
+}
+
+.view-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.view-header {
+  background: #003287;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+}
+
+.view-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.view-item-img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.view-item-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+.view-input {
+  border-radius: 8px;
+}
+
+.view-btn {
+  border-radius: 8px;
+  padding: 6px 16px;
+}
+
+.view-table thead {
+  background: #002b80;
+  color: white;
+}
+
+.view-table td, 
+.view-table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.view-mini-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
