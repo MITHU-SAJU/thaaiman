@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body>
+    <!-- Sidebar Toggle Button -->
+    <!-- Sidebar Toggle Button -->
+    <input type="checkbox" id="checkbox" hidden>
+    <label for="checkbox" class="toggle-btn" id="toggleBtn">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+    </label>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <!-- Optional Logo -->
+        </div>
+        <ul>
+            <!-- Dashboard -->
+            <li>
+                <a href="Dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+            </li>
+
+            <!-- Recipe Calc -->
+            <li>
+                <a href="./recipe-call/recipe-list.html"><i class="fas fa-utensils"></i><span>Recipe Calc</span></a>
+            </li>
+
+            <!-- Food Menu -->
+            <li>
+                <a href="./food-menu/food-menu-list.html"><i class="fas fa-book-open"></i><span>Food Menu</span></a>
+            </li>
+
+            <!-- Reports -->
+            <li>
+                <a href="reports.html"><i class="fas fa-chart-line"></i><span>Reports</span></a>
+            </li>
+
+            <!-- Settings / Masters -->
+            <li class="has-submenu">
+                <a href="#" class="submenu-toggle">
+                    <i class="fas fa-cogs"></i><span>Settings</span>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="./dish-category/dish-category-list.html"><i class="fas fa-layer-group"></i><span> Dish
+                                Category</span></a>
+                    </li>
+                    <li>
+                        <a href="./Ingredients/Ingredients-list.html"><i class="fas fa-carrot"></i><span>
+                                Ingredients</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/recipe.html"><i class="fas fa-clipboard-list"></i><span> Recipe</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/uom.html"><i class="fas fa-balance-scale"></i><span> UOM</span></a>
+                    </li>
+                    <li>
+                        <a href="masters/secondary-uom.html"><i class="fas fa-ruler-combined"></i><span> Secondary
+                                UOM</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div class="main-content" id="mainContent">
+        <!-- Header -->
+        <!-- Header -->
+        <div id="mainHeader"
+            class="d-flex justify-content-between align-items-center px-4 py-2 bg-white text-dark shadow-sm w-100">
+            <h4 class="fw-bold mb-0">Dashboard</h4>
+            <div class="d-flex align-items-center gap-3">
+                <!-- Profile Icon with Dropdown -->
+                <div class="dropdown">
+                    <a href="#"
+                        class="d-flex align-items-center justify-content-center bg-head text-white rounded-circle"
+                        id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="width: 23px; height: 20px;">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#userProfileModal">Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <!-- Dashboard Stats -->
+        <div class="container-fluid mt-5">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <i class="fas fa-utensils icon"></i>
+                            <h6>Total Dishes</h6>
+                            <h3 class="counter" data-target="120">0</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <i class="fas fa-layer-group icon"></i>
+                            <h6>Categories</h6>
+                            <h3 class="counter" data-target="12">0</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <i class="fas fa-book-open icon"></i> <!-- Changed icon -->
+                            <h6>Total Dish Menus</h6>
+                            <h3 class="counter" data-target="45">0</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <i class="fas fa-receipt icon"></i> <!-- Changed icon -->
+                            <h6>Total Recipes</h6>
+                            <h3 class="counter" data-target="120">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recently Added Dishes -->
+            <div class="card mt-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">Recently Added Dishes</h6>
+                    <a href="menu-list.html" class="btn btn-sm btn-light text-dark">View All</a>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Dish Name</th>
+                                <th>Category</th>
+                                <th>Date Added</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Paneer Butter Masala</td>
+                                <td>Main Course</td>
+                                <td>19 Aug 2025</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Chicken Biryani</td>
+                                <td>Rice</td>
+                                <td>18 Aug 2025</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Gulab Jamun</td>
+                                <td>Dessert</td>
+                                <td>18 Aug 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Expense Overview -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h6 class="mb-0">Expense Overview</h6>
+                </div>
+                <div class="card-body">
+                    <canvas id="expenseChart" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Animated counters
+        document.querySelectorAll('.counter').forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / 100;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            updateCount();
+        });
+
+        // Chart.js animated chart
+        const ctx = document.getElementById('expenseChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Ingredients', 'Suppliers', 'Maintenance', 'Others'],
+                datasets: [{
+                    data: [40000, 25000, 12000, 8000],
+                    backgroundColor: ['#0d6efd', '#6610f2', '#20c997', '#ffc107'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -31,7 +31,7 @@
         <ul>
             <!-- Dashboard -->
             <li>
-                <a href="../index.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+                <a href="../Dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
             </li>
 
             <!-- Recipe Calc -->
@@ -122,7 +122,7 @@
                         <div class="col-md-6">
                             <label class="form-label">Dish Category</label>
                             <select class="form-select" required>
-                                <option value="">-- Select Category --</option>
+                                <option value="" disabled selected hidden>-- Select Category --</option>
                                 <option>Grains</option>
                                 <option>Vegetables</option>
                                 <option>Oil & Fats</option>
@@ -130,12 +130,14 @@
                         </div>
                     </div>
 
-                    <h5 class="mt-3">Ingredient Planner</h5>
+                    <div class="text-center my-4">
+                        <h5 class="custom-underline-heading">Ingredient Planner</h5>
+                    </div>
                     <div id="ingredientContainer">
                         <div class="row ingredient-row mb-2">
                             <div class="col-md-4">
                                 <select class="form-select" required>
-                                    <option value="">-- Select Ingredient --</option>
+                                    <option value="" disabled selected hidden>-- Select Ingredient --</option>
                                     <option>Rice</option>
                                     <option>Dhal</option>
                                     <option>Coconut</option>
@@ -143,7 +145,7 @@
                             </div>
                             <div class="col-md-3">
                                 <select class="form-select" required>
-                                    <option value="">-- Select UOM --</option>
+                                    <option value="" disabled selected hidden>-- Select UOM --</option>
                                     <option>KG</option>
                                     <option>Litre</option>
                                     <option>Piece</option>
@@ -151,7 +153,7 @@
                             </div>
                             <div class="col-md-3">
                                 <select class="form-select" required>
-                                    <option value="">-- Select Container --</option>
+                                    <option value="" disabled selected hidden>-- Select Container --</option>
                                     <option>Bucket</option>
                                     <option>Box</option>
                                     <option>Packet</option>

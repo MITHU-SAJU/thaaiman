@@ -1,6 +1,18 @@
+/* Center align DataTables table header cells globally */
 body {
   font-family: 'Segoe UI', Roboto, sans-serif;
   background-color: #f0f2f5;
+}
+.sidebar-logo {
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 50%;     /* Set desired width */
+  height: 110px;    /* Set desired height */
+  display: block;
+  margin-top: -2rem;
+  margin-left: 5rem;
 }
 .sidebar {
   width: 250px;
@@ -20,7 +32,7 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-ebar::-webkit-scrollbar {
+sidebar::-webkit-scrollbar {
   display: none;
 }
 
@@ -61,10 +73,9 @@ ebar::-webkit-scrollbar {
 /* Hover Effects */
 .sidebar ul li a:hover {
 background-color: #f6f9ff;
-  color: #003287;
-  border-left: 4px solid #003287;
-
-  margin-left: 25px;
+color: #003287;
+border-left: 4px solid #003287;
+margin-left: 25px;
 }
 
 .sidebar ul li a {
@@ -170,9 +181,6 @@ transition: all 0.5s ease;
   }
 }
 
-
-
-
 .main-content {
   margin-left: 250px;
   padding: 10px;
@@ -184,77 +192,51 @@ transition: all 0.5s ease;
   margin-left: 60px;
 }
 
-
-
-
-.sidebar-logo {
-  background-image: url(../images/logo.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 50%;     /* Set desired width */
-  height: 110px;    /* Set desired height */
-  display: block;
-  margin-left: 5rem;
-  margin-top: -2rem;
-
-   /* Center it if needed */
-}
-
-
 .custom-box {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Fancy Form Controls */
-.form-control,
-.form-select {
-  border-radius: 12px;
-  padding: 8px 10px;
-  border: 2px solid rgba(200, 200, 200, 0.4);
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  font-size: 15px;
-  font-weight: 500;
-  color: #2d3748;
+label {
+      font-weight: 600;
+      font-size: 12px;
+      color: #34495e;
+      text-transform: uppercase;
+      letter-spacing: 0.08px;
+      font-family: "Segoe UI", Roboto, sans-serif;
+ }
+    .form-control,
+    .form-select {
+          padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.2s ease;
+    }
+
+    .form-label {
+       text-align: left !important;
+       display: block;
+       font-family: "Segoe UI", Roboto, sans-serif;
+           margin-top: 1rem;
+
 }
 
-/* Placeholder styling */
-.form-control::placeholder {
-  color: #999;
-  font-style:normal;
-}
-input::placeholder,
-textarea::placeholder {
-  color: #000 !important;
+
+/* DataTables search input placeholder */
+.dataTables_filter input[type="search"]::placeholder {
+  color: #bfc7d1 !important;
   opacity: 1;
+  font-style: normal;
 }
-
-input::-webkit-input-placeholder {
-  color: #000 !important;
+.dataTable th,
+.table.dataTable th,
+.custom-table th {
+  text-align: center !important;
+  vertical-align: middle !important;
 }
-input::-moz-placeholder {
-  color: #000 !important;
-}
-input:-ms-input-placeholder {
-  color: #000 !important;
-}
-input::-ms-input-placeholder {
-  color: #000 !important;
-}
-
-/* On Hover */
-.form-control:hover,
-.form-select:hover {
-  border-color: #003287; /* gold accent */
-  box-shadow: 0 4px 12px rgba(193, 154, 107, 0.2);
-}
-
-
 
 .add-btn-custom{
   /* From Uiverse.io by adamgiebl */ 
@@ -304,9 +286,6 @@ input::-ms-input-placeholder {
 }
 
 
-
-
-/* Elegant Form Labels */
 .form-label {
   font-weight: 600;
   font-size: 15px;

@@ -34,7 +34,7 @@
         <ul>
             <!-- Dashboard -->
             <li>
-                <a href="../index.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+                <a href="../Dashboard.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
             </li>
 
             <!-- Recipe Calc -->
@@ -116,11 +116,11 @@
         <div class="container-fluid py-5">
             <div class="custom-box p-4">
                 <!-- Input Form -->
-                <div class="container d-flex justify-content-center mt-5">
-                    <div class="p-4 rounded shadow-sm border bg-light" style="min-width: 800px;">
+                <div class="container">
+                    <div class="p-4 rounded shadow-sm border bg-light">
                         <form class="row g-3">
-                            <div class="row align-items-end g-3">
-                                <div class="col-md-3">
+                            <div class="row g-3">
+                                <div class="col-md-3 col-sm-6">
                                     <label class="form-label">Meal Type</label>
                                     <select class="form-select">
                                         <option value="">-- Select --</option>
@@ -130,7 +130,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-6">
                                     <label class="form-label">Item</label>
                                     <select class="form-select">
                                         <option value="">-- Select Item --</option>
@@ -142,58 +142,56 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-6">
                                     <label class="form-label">Quantity</label>
                                     <input type="number" class="form-control" placeholder="e.g., 4">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-6">
                                     <label class="form-label">Bucket</label>
-                                    <input type="number" class="form-control" placeholder=" Bucket">
+                                    <input type="number" class="form-control" placeholder="Bucket">
                                 </div>
                             </div>
 
                             <!-- Centered Button Row -->
                             <div class="row mt-3">
                                 <div class="col-12 d-flex justify-content-center">
-                                    <button type="button" class=" add-btn-custom">Calculate</button>
+                                    <button type="button" class="add-btn-custom px-4">Calculate</button>
                                 </div>
                             </div>
-
                         </form>
-
                     </div>
                 </div>
 
-
                 <!-- Ingredients Table -->
                 <div class="mt-4">
-                    <div class="text-center my-5">
+                    <div class="text-center my-4">
                         <h5 class="custom-underline-heading">Ingredients Required</h5>
                     </div>
 
-
-                    <table class="table table-bordered table-striped custom-table fs-4">
-                        <thead class="table-dark text-center">
-                            <tr>
-                                <th>Item Name</th>
-                                <th>UOM</th>
-                                <th>Required Qty</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-center">
-                            <tr>
-                                <td>Dal</td>
-                                <td>Kg</td>
-                                <td>2.0</td>
-                            </tr>
-                            <tr>
-                                <td>Sugar</td>
-                                <td>Kg</td>
-                                <td>0.5</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped custom-table fs-4 text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Ingredients Name</th>
+                                    <th>UOM</th>
+                                    <th>Required Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dal</td>
+                                    <td>Kg</td>
+                                    <td>2.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Sugar</td>
+                                    <td>Kg</td>
+                                    <td>0.5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- Save Button -->
@@ -202,109 +200,65 @@
                 </div>
             </div>
 
-
+            <!-- Second Table -->
             <div class="container-fluid py-5">
                 <div class="custom-box p-4">
-                    <!-- <div class="d-flex justify-content-end align-items-center mb-3">
-                        <a href="./add-recipe.html" class="add-btn-custom"><i class="bi bi-plus-lg"></i> New Recipe
-                            Call</a>
-                    </div> -->
-
-                    <!-- Table -->
-                    <table id="myTable" class="table table-bordered table-striped custom-table fs-4">
-                        <thead class="table-dark text-center">
-                            <tr>
-                                <th>S.No</th>
-                                <th>Item Name</th>
-                                <th>Qty</th>
-                                <th>UOM</th>
-                                <th>Bucket</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-center">
-                            <tr>
-                                <td>1</td>
-                                <td>Pongal</td>
-                                <td>4</td>
-                                <td>Buckets</td>
-                                <td>20</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-info">View</a>
-                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Sambar</td>
-                                <td>1</td>
-                                <td>Bucket</td>
-                                <td>30</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-info">View</a>
-                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table id="myTable" class="table table-bordered table-striped custom-table fs-4 text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Item Name</th>
+                                    <th>Qty</th>
+                                    <th>UOM</th>
+                                    <th>Bucket</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Pongal</td>
+                                    <td>4</td>
+                                    <td>Buckets</td>
+                                    <td>20</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-light" title="View"><i
+                                                class="fa fa-eye text-info"></i></a>
+                                        <a href="#" class="btn btn-sm btn-light" title="Edit"><i
+                                                class="fa fa-edit text-warning"></i></a>
+                                        <a href="#" class="btn btn-sm btn-light" title="Delete"><i
+                                                class="fa fa-trash text-danger"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Sambar</td>
+                                    <td>1</td>
+                                    <td>Bucket</td>
+                                    <td>30</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-light" title="View"><i
+                                                class="fa fa-eye text-info"></i></a>
+                                        <a href="#" class="btn btn-sm btn-light" title="Edit"><i
+                                                class="fa fa-edit text-warning"></i></a>
+                                        <a href="#" class="btn btn-sm btn-light" title="Delete"><i
+                                                class="fa fa-trash text-danger"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <!-- PDF Button -->
-                    <div class="text-end mt-3">
-                        <button class="btn btn-success btn-lg" onclick="downloadPDF()">Download PDF</button>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-success btn-lg" onclick="downloadPDF()">Download </button>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="../assets/js/script.js"></script>
-        <script>
-            async function downloadPDF() {
-                const {
-                    jsPDF
-                } = window.jspdf;
-                const table = document.getElementById("myTable");
-
-                // 🔹 Clone table so we don't modify the original
-                const clonedTable = table.cloneNode(true);
-
-                // 🔹 Remove the last column (Action) from cloned table
-                clonedTable.querySelectorAll("tr").forEach(row => {
-                    row.deleteCell(row.cells.length - 1);
-                });
-
-                // 🔹 Put cloned table into a hidden container for capture
-                const hiddenDiv = document.createElement("div");
-                hiddenDiv.style.position = "absolute";
-                hiddenDiv.style.left = "-9999px"; // keep off-screen
-                hiddenDiv.appendChild(clonedTable);
-                document.body.appendChild(hiddenDiv);
-
-                // Capture with html2canvas
-                const canvas = await html2canvas(clonedTable, {
-                    scale: 2
-                });
-                const imgData = canvas.toDataURL("image/png");
-
-                // Create PDF
-                const pdf = new jsPDF("p", "mm", "a4");
-                const pageWidth = pdf.internal.pageSize.getWidth();
-
-                // Resize image to fit page width
-                const imgWidth = pageWidth - 20;
-                const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-                pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
-
-                // Save as PDF
-                pdf.save("table.pdf");
-
-                // Clean up
-                document.body.removeChild(hiddenDiv);
-            }
-        </script>
-
-
+    </div>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>
