@@ -118,104 +118,105 @@
                 <div class="d-flex justify-content-end align-items-center mb-3">
                     <a href="./add-Ingredients.html" class="add-btn-custom">+ Add Ingredients</a>
                 </div>
-                <table id="ingredientsTable" class="table table-bordered table-striped custom-table fs-4"
-                    style="width:100%">
-                    <thead class="table-dark text-center">
-                        <tr>
-                            <th>S.No</th>
-                            <th>Ingredient Name</th>
-                            <th>Category</th>
-                            <th>UOM</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ingredientTableBody" class="text-center">
-                        <tr>
-                            <td>1</td>
-                            <td>Rice</td>
-                            <td>Grains</td>
-                            <td>Kg</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-light" title="View"><i
-                                        class="fa fa-eye text-info"></i></a>
-                                <a href="#" class="btn btn-sm btn-light" title="Edit"><i
-                                        class="fa fa-edit text-warning"></i></a>
-                                <a href="#" class="btn btn-sm btn-light" title="Delete"><i
-                                        class="fa fa-trash text-danger"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Milk</td>
-                            <td>Dairy</td>
-                            <td>Litre</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-light" title="View"><i
-                                        class="fa fa-eye text-info"></i></a>
-                                <a href="#" class="btn btn-sm btn-light" title="Edit"><i
-                                        class="fa fa-edit text-warning"></i></a>
-                                <a href="#" class="btn btn-sm btn-light" title="Delete"><i
-                                        class="fa fa-trash text-danger"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Tomato</td>
-                            <td>Vegetables</td>
-                            <td>Kg</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-light" title="View"><i
-                                        class="fa fa-eye text-info"></i></a>
-                                <a href="#" class="btn btn-sm btn-light" title="Edit"><i
-                                        class="fa fa-edit text-warning"></i></a>
-                                <a href="#" class="btn btn-sm btn-light" title="Delete"><i
-                                        class="fa fa-trash text-danger"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
+                <div class="table-responsive">
+                    <table id="ingredientsTable" class="table table-bordered table-striped custom-table fs-4"
+                        style="width:100%">
+                        <thead class="table-dark text-center">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Ingredient Name</th>
+                                <th>Category</th>
+                                <th>UOM</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ingredientTableBody" class="text-center">
+                            <tr>
+                                <td>1</td>
+                                <td>Rice</td>
+                                <td>Grains</td>
+                                <td>Kg</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-light" title="View"><i
+                                            class="fa fa-eye text-info"></i></a>
+                                    <a href="#" class="btn btn-sm btn-light" title="Edit"><i
+                                            class="fa fa-edit text-warning"></i></a>
+                                    <a href="#" class="btn btn-sm btn-light" title="Delete"><i
+                                            class="fa fa-trash text-danger"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Milk</td>
+                                <td>Dairy</td>
+                                <td>Litre</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-light" title="View"><i
+                                            class="fa fa-eye text-info"></i></a>
+                                    <a href="#" class="btn btn-sm btn-light" title="Edit"><i
+                                            class="fa fa-edit text-warning"></i></a>
+                                    <a href="#" class="btn btn-sm btn-light" title="Delete"><i
+                                            class="fa fa-trash text-danger"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Tomato</td>
+                                <td>Vegetables</td>
+                                <td>Kg</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-light" title="View"><i
+                                            class="fa fa-eye text-info"></i></a>
+                                    <a href="#" class="btn btn-sm btn-light" title="Edit"><i
+                                            class="fa fa-edit text-warning"></i></a>
+                                    <a href="#" class="btn btn-sm btn-light" title="Delete"><i
+                                            class="fa fa-trash text-danger"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
 
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="../assets/js/script.js"></script>
-    <!-- jQuery and DataTables JS (jQuery first) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Load ingredients from localStorage if present
-            if (typeof loadIngredients === 'function') {
-                loadIngredients();
-            }
-            var table = $('#ingredientsTable').DataTable({
-                paging: true,
-                searching: true,
-                ordering: true,
-                lengthMenu: [5, 10, 25, 50],
-                pageLength: 5,
-                language: {
-                    search: "",
-                    searchPlaceholder: "Search ingredients...",
-                    lengthMenu: "Show _MENU_ entries",
-                    info: "Showing _START_ to _END_ of _TOTAL_ entries",
-                    paginate: {
-                        previous: "Prev",
-                        next: "Next"
-                    }
+        <script src="../assets/js/script.js"></script>
+        <!-- jQuery and DataTables JS (jQuery first) -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Load ingredients from localStorage if present
+                if (typeof loadIngredients === 'function') {
+                    loadIngredients();
                 }
+                var table = $('#ingredientsTable').DataTable({
+                    paging: true,
+                    searching: true,
+                    ordering: true,
+                    lengthMenu: [5, 10, 25, 50],
+                    pageLength: 5,
+                    language: {
+                        search: "",
+                        searchPlaceholder: "Search ingredients...",
+                        lengthMenu: "Show _MENU_ entries",
+                        info: "Showing _START_ to _END_ of _TOTAL_ entries",
+                        paginate: {
+                            previous: "Prev",
+                            next: "Next"
+                        }
+                    }
+                });
             });
-        });
-    </script>
-    <script>
-        function loadIngredients() {
-            let ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
-            let tableBody = document.getElementById("ingredientTableBody");
-            tableBody.innerHTML = "";
-            ingredients.forEach((ing, index) => {
-                let row = document.createElement("tr");
-                row.innerHTML = `
+        </script>
+        <script>
+            function loadIngredients() {
+                let ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
+                let tableBody = document.getElementById("ingredientTableBody");
+                tableBody.innerHTML = "";
+                ingredients.forEach((ing, index) => {
+                    let row = document.createElement("tr");
+                    row.innerHTML = `
           <td>${index + 1}</td>
           <td>${ing.name}</td>
           <td>${ing.category}</td>
@@ -231,19 +232,19 @@
                             </td>
           </td>
         `;
-                tableBody.appendChild(row);
-            });
-        }
+                    tableBody.appendChild(row);
+                });
+            }
 
-        function deleteIngredient(index) {
-            let ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
-            ingredients.splice(index, 1);
-            localStorage.setItem("ingredients", JSON.stringify(ingredients));
+            function deleteIngredient(index) {
+                let ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
+                ingredients.splice(index, 1);
+                localStorage.setItem("ingredients", JSON.stringify(ingredients));
+                loadIngredients();
+            }
+
             loadIngredients();
-        }
-
-        loadIngredients();
-    </script>
+        </script>
 </body>
 
 </html>
