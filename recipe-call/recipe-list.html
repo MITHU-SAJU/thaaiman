@@ -183,14 +183,15 @@
 
                             <!-- Button -->
                             <div class="col-12 d-flex justify-content-center mt-4">
-                                <button type="button" class="add-btn-custom px-4">Calculate</button>
+                                <button type="button" class="add-btn-custom px-4"
+                                    onclick="showIngredients()">Calculate</button>
                             </div>
                         </form>
 
                     </div>
 
                     <!-- Ingredients Table -->
-                    <div class="mt-4">
+                    <div class="mt-4" id="ingredientsSection" style="display: none;">
                         <div class="text-center my-4">
                             <h5 class="custom-underline-heading"><span style="color: blue;">Pongal</span> Ingredients
                                 Required</h5>
@@ -231,7 +232,6 @@
                                         <td>Gram</td>
                                         <td>15</td>
                                     </tr>
-
                                     <tr>
                                         <td>Curry Leaves</td>
                                         <td>Sprig</td>
@@ -245,82 +245,81 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <!-- Add to List Button -->
+                        <div class="text-center mt-3">
+                            <button class="btn btn-lg btn-success" onclick="showSecondTable()">Add to List</button>
+                        </div>
                     </div>
 
-                    <!-- Save Button -->
-                    <div class="text-center mt-3">
-                        <a href="./recipe-list.html" class="btn btn-lg btn-success">Add to List</a>
+                    <!-- Second Table -->
+                    <div class="container-fluid py-5" id="secondTableSection" style="display: none;">
+                        <div class="custom-box p-4">
+                            <div class="table-responsive">
+                                <table id="myTable"
+                                    class="table table-bordered table-striped custom-table fs-4 text-center">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Image</th>
+                                            <th>Item Name</th>
+                                            <th>Qty</th>
+                                            <th>UOM</th>
+                                            <th>Bucket</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <img src="../assets/images/pongal.jpeg" alt="Pongal"
+                                                    class="img-fluid rounded-circle"
+                                                    style="width:40px; height:40px; object-fit:cover;">
+                                            </td>
+                                            <td>Pongal</td>
+                                            <td>4</td>
+                                            <td>Buckets</td>
+                                            <td>20</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-light" title="View"><i
+                                                        class="fa fa-eye text-info"></i></a>
+                                                <a href="#" class="btn btn-sm btn-light" title="Edit"><i
+                                                        class="fa fa-edit text-warning"></i></a>
+                                                <a href="#" class="btn btn-sm btn-light" title="Delete"><i
+                                                        class="fa fa-trash text-danger"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>
+                                                <img src="../assets/images/sambar.jpeg" alt="Sambar"
+                                                    class="img-fluid rounded-circle"
+                                                    style="width:40px; height:40px; object-fit:cover;">
+                                            </td>
+                                            <td>Sambar</td>
+                                            <td>1</td>
+                                            <td>Bucket</td>
+                                            <td>30</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-light" title="View"><i
+                                                        class="fa fa-eye text-info"></i></a>
+                                                <a href="#" class="btn btn-sm btn-light" title="Edit"><i
+                                                        class="fa fa-edit text-warning"></i></a>
+                                                <a href="#" class="btn btn-sm btn-light" title="Delete"><i
+                                                        class="fa fa-trash text-danger"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- PDF Button -->
+                            <div class="text-center mt-3">
+                                <a href="./view.html" class="btn btn-success btn-lg">View</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Second Table -->
-            <div class="container-fluid py-5">
-                <div class="custom-box p-4">
-                    <div class="table-responsive">
-                        <table id="myTable" class="table table-bordered table-striped custom-table fs-4 text-center">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>S.No</th>
-                                    <th>Image</th>
-                                    <th>Item Name</th>
-                                    <th>Qty</th>
-                                    <th>UOM</th>
-                                    <th>Bucket</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <img src="../assets/images/pongal.jpeg" alt="Pongal"
-                                            class="img-fluid rounded-circle"
-                                            style="width:40px; height:40px; object-fit:cover;">
-                                    </td>
-                                    <td>Pongal</td>
-                                    <td>4</td>
-                                    <td>Buckets</td>
-                                    <td>20</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-light" title="View"><i
-                                                class="fa fa-eye text-info"></i></a>
-                                        <a href="#" class="btn btn-sm btn-light" title="Edit"><i
-                                                class="fa fa-edit text-warning"></i></a>
-                                        <a href="#" class="btn btn-sm btn-light" title="Delete"><i
-                                                class="fa fa-trash text-danger"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        <img src="../assets/images/sambar.jpeg" alt="Sambar"
-                                            class="img-fluid rounded-circle"
-                                            style="width:40px; height:40px; object-fit:cover;">
-                                    </td>
-                                    <td>Sambar</td>
-                                    <td>1</td>
-                                    <td>Bucket</td>
-                                    <td>30</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-light" title="View"><i
-                                                class="fa fa-eye text-info"></i></a>
-                                        <a href="#" class="btn btn-sm btn-light" title="Edit"><i
-                                                class="fa fa-edit text-warning"></i></a>
-                                        <a href="#" class="btn btn-sm btn-light" title="Delete"><i
-                                                class="fa fa-trash text-danger"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-
-                    <!-- PDF Button -->
-                    <div class="text-center mt-3">
-                        <a href="./view.html" class="btn btn-success btn-lg">View</a>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -394,50 +393,17 @@
             }
         });
     </script>
-
-    <!-- <script>
-        async function downloadPDF() {
-            const {
-                jsPDF
-            } = window.jspdf;
-            const table = document.getElementById("myTable");
-
-            // Clone the table to avoid modifying original
-            const clonedTable = table.cloneNode(true);
-
-            // Remove Action column from cloned table
-            clonedTable.querySelectorAll("tr").forEach(row => {
-                if (row.cells.length > 0) {
-                    row.deleteCell(row.cells.length - 1);
-                }
-            });
-
-            // Hidden div for rendering
-            const hiddenDiv = document.createElement("div");
-            hiddenDiv.style.position = "absolute";
-            hiddenDiv.style.left = "-9999px";
-            hiddenDiv.appendChild(clonedTable);
-            document.body.appendChild(hiddenDiv);
-
-            // Convert to canvas
-            const canvas = await html2canvas(clonedTable, {
-                scale: 2
-            });
-            const imgData = canvas.toDataURL("image/png");
-
-            // Create PDF
-            const pdf = new jsPDF("p", "mm", "a4");
-            const pageWidth = pdf.internal.pageSize.getWidth();
-            const imgWidth = pageWidth - 20;
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-            pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
-            pdf.save("table.pdf");
-
-            // Cleanup
-            document.body.removeChild(hiddenDiv);
+    <script>
+        function showIngredients() {
+            document.getElementById("ingredientsSection").style.display = "block";
         }
-    </script> -->
+        // Reset form fields after showing the table
+        document.querySelector("form").reset();
+
+        function showSecondTable() {
+            document.getElementById("secondTableSection").style.display = "block";
+        }
+    </script>
 </body>
 
 </html>
