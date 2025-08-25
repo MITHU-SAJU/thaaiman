@@ -130,6 +130,130 @@ transition: all 0.5s ease;
   transition: all 0.4s ease;
 }
 
+@media (max-width: 768px) {
+
+  /* Sidebar logo */
+  .sidebar-logo {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 60%;
+    height: 100px;
+    display: block;
+    margin: 1rem auto;
+  }
+
+  .sidebar.open { left: 0; }
+  .sidebar.active { width: 100%; }
+
+  /* Main vertical menu */
+  .sidebar ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+
+  .sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: #f6f9ff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    font-size: 15px;
+    font-weight: 500;
+    color: #003287;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar ul li a i {
+    font-size: 18px;
+    color: #003287;
+    min-width: 22px;
+    text-align: center;
+  }
+
+  .sidebar ul li a:hover {
+    background: #003287;
+    color: #fff;
+    transform: translateX(4px);
+  }
+
+  .sidebar ul li a:hover i {
+    color: #fff;
+  }
+
+  /* 🔹 Flatten submenus into normal menu items */
+  .sidebar ul ul {
+    display: block !important;   /* Always visible */
+    margin: 0;                   /* Remove indent */
+    padding: 0;
+    border: none;                /* Remove left border */
+  }
+
+  .sidebar ul ul li a {
+    background: #f6f9ff;         /* Same style as main menu */
+    font-size: 15px;
+    padding: 14px 18px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+
+  .sidebar ul ul li a:hover {
+    background: #003287;
+    color: #fff;
+  }
+
+  /* Hide submenu arrow in mobile */
+  .sidebar .arrow {
+    display: none;
+  }
+
+  /* Toggle button visible */
+  .toggle-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2001;
+  }
+
+  .toggle-btn {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  top: 11px;
+  left: 15px;
+  z-index: 1001;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.bars {
+  height: 4px;
+  background-color: #003287;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+.fw-bold {
+  font-weight: 700 !important; /* keep bold */
+  text-align: center;          /* center text */
+  display: block;              /* ensure full width */
+  width: 100%;
+}
+}
+
 .custom-table th{
   background-color: #003287 !important;
    text-transform: lowercase;
