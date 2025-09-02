@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span>${text}</span>
       `;
 
-            dropdown.classList.remove("open"); // 🔴 Close after select
+            dropdown.classList.remove("open"); // 
         });
     });
 

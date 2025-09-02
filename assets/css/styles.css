@@ -107,8 +107,7 @@ transition: all 0.5s ease;
   transform: rotate(180deg);
 }
 
-/* Sidebar Toggle Button */
-/* Toggle Button Bars */
+
 .toggle-btn {
   width: 35px;
   height: 30px;
@@ -426,6 +425,8 @@ label {
   transition: all 0.3s ease-in-out;
 }
 
+
+/* DASHBOARD PAGE */
 /* Stat Cards */
   .stat-card {
       border: none;
@@ -592,15 +593,15 @@ label {
       border-color: #4a90e2;
     }
 
-    /* Only show when open */
+  
     .custom-dropdown.open .dropdown-options {
       display: flex;
     }
 
 
 /* Preview Box */
-.preview-box {       /* fixed width */
-  height: 220px;         /* fixed height */
+.preview-box {      
+  height: 220px;        
   border: 1px solid #ccc;
   border-radius: 12px;
   background: #fff;
@@ -632,7 +633,7 @@ label {
 
 
 
-
+/* RECIPE VIEW PAGE */
 .view-container {
   max-width: 1200px;
 }
